@@ -9,5 +9,4 @@ job('01_Deploy_on_kubernetes_CI') {
     triggers {
         cron('* * * * *')
     }
-
 }
