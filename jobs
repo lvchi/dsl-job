@@ -7,10 +7,6 @@ job('01_Deploy_on_kubernetes_CI') {
         maven {
             goals('clean')
             goals('verify')
-            mavenOpts('-Xms256m')
-            mavenOpts('-Xmx512m')
-            localRepository(LocalRepositoryLocation.LOCAL_TO_WORKSPACE)
-            properties(skipTests: true)
         }
     }
     scm {
