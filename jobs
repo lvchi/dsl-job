@@ -14,11 +14,11 @@ job('01_Deploy_on_kubernetes_CI') {
             mavenInstallation('Maven 3.1.1')
             providedSettings('central-mirror')
         }
+    }
     scm {
         git('https://github.com/lvchi/hello-world.git', 'master')
     }
     triggers {
         cron('* * * * *')
     }
-
 }
