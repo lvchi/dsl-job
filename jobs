@@ -1,28 +1,13 @@
-job('seed_job_dsl') {
+job('01_Deploy_on_kubernetes_CI') {
 
-    description('This is my awesome Job')
-
-  
-    parameters {
-        stringParam('Planet', defaultValue = 'world', description = 'This is the world')
-	booleanParam('FLAG', true)
-        choiceParam('OPTION', ['option 1 (default)', 'option 2', 'option 3'])
-    }
+    description('Deploy on kubernetes CI')
 
     scm {
-        git('https://github.com/jenkins-docs/simple-java-maven-app', 'master')
+        git('https://github.com/lvchi/hello-world.git', 'master')
     }
 
     triggers {
-        cron('H 5 * * 7')
+        cron('* * * * *')
     }
 
-    steps {
-        shell("echo 'Hello World'")
-        shell("echo 'Hello World2'")
-    }
-
-    publishers {
-        mailer('me@example.com', true, true)
-    }
 }
