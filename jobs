@@ -1,4 +1,4 @@
-job('job_dsl') {
+job('seed_job_dsl') {
 
     description('This is my awesome Job')
 
