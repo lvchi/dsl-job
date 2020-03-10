@@ -7,7 +7,7 @@ job('01_Deploy_on_kubernetes_CI') {
     }
     steps {
         maven('verify')
-        maven('clean verify', 'module-a/pom.xml')
+        maven('clean verify', 'pom.xml')
         maven {
             goals('clean')
             goals('verify')
