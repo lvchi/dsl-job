@@ -2,17 +2,9 @@ job('01_Deploy_on_kubernetes_CI') {
 
     description('Deploy on kubernetes CI')
     steps {
-        maven('verify')
         maven('clean verify', 'pom.xml')
-        maven {
-            goals('clean')
-            goals('verify')
-        }
     }
     scm {
         git('https://github.com/lvchi/hello-world.git', 'master')
-    }
-    triggers {
-        cron('* * * * *')
     }
 }
